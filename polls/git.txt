@@ -1,13 +1,17 @@
-git init 
-git add .  (or)  git add filename # for tracking the file any add, modify delete kind of changes.
-git commit -m "commit message".
-git remote add origin "repository url".
-git push origin master # pushes changes from local to remote repo.
-git status # shows any changes done to any file or untracked files or added files etc.
-git log #shows the all previous actions.
+~git init 
+~git add .  (or)  git add filename # for tracking the file any add, modify delete kind of changes.
+~git commit -m "commit message".
+~git remote add origin "repository url".
+~git push origin master # pushes changes from local to remote repo.
+~git status # shows any changes done to any file or untracked files or added files etc.
+~git log #shows the all previous actions.
 
 ------------ until and unless you push the changes to remote, changes will not be effected in remote repo.-------------------------
 
+~git clone "url" # to copy the whole remote copy to local 
+~git pull "url" (or) git pull origin master #copies specific part to loacl from remote.
+~git branch branchname #to work on diff branch rather than directly on master.First work on your branch 	and then merge it with master.
+~git checkout branchname # to go to a specific branch. Things that are changed or created or etc will not 	be availaible to master until u merge them to master. i.r they are isolated completely inorder to do    	parellel and uninterrupted devolopment.  
+~
 
-  
 
