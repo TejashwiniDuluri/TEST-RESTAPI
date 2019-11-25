@@ -4,7 +4,7 @@
 ~git remote add origin "repository url".
 ~git push origin master # pushes changes from local to remote repo.
 ~git status # shows any changes done to any file or untracked files or added files etc.
-~git log #shows the all previous actions.
+~git log #shows the all previous actions.(History of all commits)
 
 ------------ until and unless you push the changes to remote, changes will not be effected in remote repo.-------------------------
 
@@ -12,6 +12,13 @@
 ~git pull "url" (or) git pull origin master #copies specific part to loacl from remote.
 ~git branch branchname #to work on diff branch rather than directly on master.First work on your branch 	and then merge it with master.
 ~git checkout branchname # to go to a specific branch. Things that are changed or created or etc will not 	be availaible to master until u merge them to master. i.r they are isolated completely inorder to do    	parellel and uninterrupted devolopment.  
-~
 
+~ git branch -a  # lists all branches.
+
+------------- do something on this branch and are not effected to master until u push branch -----------
+
+~ git push origin TestBranch (my branch name) #pushes my branch to remore repo.
+~ git checkout master #now go to master again.
+~ git merge TestBranch #merge your branch to master. 
+~ git push origin master #after merging push to remote repo. Before that pull any changes meanwhile.
 
