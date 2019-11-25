@@ -19,7 +19,6 @@ from rest_framework.status import (
     HTTP_404_NOT_FOUND,
     HTTP_200_OK
 )
-
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from django.contrib.auth import authenticate
@@ -89,7 +88,6 @@ class HelloView(APIView):
         content = {'message': 'Hello, World!'}
         return Response(content)
 
-##blah blah
 
 # @csrf_exempt
 # @api_view(["POST"])
