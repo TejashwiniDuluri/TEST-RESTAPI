@@ -1,5 +1,13 @@
-git init
-git add .  (or)  git add filename
-git commit -m "commit message"
-git remote add origin "repository url"
- 
+git init 
+git add .  (or)  git add filename # for tracking the file any add, modify delete kind of changes.
+git commit -m "commit message".
+git remote add origin "repository url".
+git push origin master # pushes changes from local to remote repo.
+git status # shows any changes done to any file or untracked files or added files etc.
+git log #shows the all previous actions.
+
+------------ until and unless you push the changes to remote, changes will not be effected in remote repo.-------------------------
+
+
+  
+
