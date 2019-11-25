@@ -1,0 +1,5 @@
+git init
+git add .  (or)  git add filename
+git commit -m "commit message"
+git remote add origin "repository url"
+ 
