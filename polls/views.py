@@ -91,20 +91,20 @@ class HelloView(APIView):
 
 ##blah blah
 
-# @csrf_exempt
-# @api_view(["POST"])
-# @permission_classes((AllowAny,))
-# def login(request):
-# 	username=request.data.get("username")
-# 	print(username)
-# 	password=request.data.get("password")
-# 	if username is None or password is None:
-# 		return Response(status=HTTP_400_BAD_REQUEST)
+@csrf_exempt
+@api_view(["POST"])
+@permission_classes((AllowAny,))
+def login(request):
+	username=request.data.get("username")
+	print(username)
+	password=request.data.get("password")
+	if username is None or password is None:
+		return Response(status=HTTP_400_BAD_REQUEST)
 
-# 	else:
-# 		user = authenticate(username=username, password=password)
-# 	if user == None:
-# 		return Response(status=HTTP_404_NOT_FOUND)
-# 	else:
-# 		token = Token.objects.get(user=user)
-# 		return Response({"token":token.key})
+	else:
+		user = authenticate(username=username, password=password)
+	if user == None:
+		return Response(status=HTTP_404_NOT_FOUND)
+	else:
+		token = Token.objects.get(user=user)
+		return Response({"token":token.key})
