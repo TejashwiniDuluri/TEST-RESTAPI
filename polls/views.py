@@ -62,7 +62,7 @@ class specificFlight(APIView):
 	def get_object(self,id):
 		try:
 			objectrequired = Flight.objects.get(id=id)
-			return objectrequired
+			return objectrequired	
 		except objectrequired.DoesNotExist:
 			return HttpResponse(status = status.HTTP_404_NOT_FOUND)
 
@@ -91,6 +91,20 @@ class HelloView(APIView):
 
 ##blah blah
 
+
+@csrf_exempt
+@api_view(["POST"])
+@permission_classes((AllowAny,))
+def UserRegister(request):	
+	serializer = UserRegisterSerializer(data=request.data)
+	if serializer.is_valid():
+		user=User.objects.create_user(username=serializer.validated_data["username"],account_type=serializer.validated_data["account_type"],email=serializer.validated_data["email"],password=serializer.validated_data["password"])
+		token=Token.objects.create(user=user)
+		print(token.key)
+		return Response({"token":token.key,"username":user.username})
+	else:
+		return Response(serializer.errors)
+	
 @csrf_exempt
 @api_view(["POST"])
 @permission_classes((AllowAny,))
@@ -100,7 +114,6 @@ def login(request):
 	password=request.data.get("password")
 	if username is None or password is None:
 		return Response(status=HTTP_400_BAD_REQUEST)
-
 	else:
 		user = authenticate(username=username, password=password)
 	if user == None:
