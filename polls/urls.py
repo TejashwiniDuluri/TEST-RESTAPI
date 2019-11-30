@@ -11,7 +11,8 @@ urlpatterns = [
 	url(r'^userslist/$',views.usersList.as_view({'get': 'list'})),
 	url(r'^flightslist/$',views.AllFlights),
 	url(r'^specificflight/(\d+)/$',views.specificFlight.as_view()),
-	# url(r'^login$',views.login),
+	url(r'^login/$',views.login),
+	url(r'^UserRegister/$',views.UserRegister,)
 
 	# url(r'^flights/$',views.flights,name="flights"),
 
